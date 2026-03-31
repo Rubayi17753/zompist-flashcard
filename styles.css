@@ -1,0 +1,30 @@
+body {
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    background: #FFE0E0;
+  }
+  
+  .card {
+    font-size: 10vw;
+    max-font-size: 80px;
+    background: white;
+    padding: 1rem 2rem;
+    border: 1px solid #ccc;
+    margin-bottom: 1rem;
+  }
+  
+  .controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+  
+  input, button, select {
+    font-size: 1rem;
+    padding: 0.5rem;
+  }
