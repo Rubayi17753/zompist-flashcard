@@ -8,21 +8,39 @@
 
 <link rel="stylesheet" href="styles.css">
 
-<!-- Data -->
-<script src="cards.js"></script>
+<!-- Data  (disable if deck toggled by dropdown) -->
+<script src="decks_js/cedict_multichar.js"></script> 
 
 <!-- Logic (deferred so DOM is ready) -->
 <script src="app.js" defer></script>
+
+<!-- Handles deck dropdown 
+<script src="manifest.js"></script>
+<script src="deck-loader.js" defer></script>
+-->
+
 </head>
 
 <body>
 
 <h2>Flashcards</h2>
 
-<div id="card" class="card"></div>
+<div class="main-row">
+  <textarea id="card" rows="1" cols="20" spellcheck="false"></textarea>
+  <!-- <div id="card" class="card"></div> -->
 
-<input type="text" id="pinyin" placeholder="Pinyin">
-<input type="text" id="gloss" placeholder="Gloss">
+  <div class="font-controls">
+    <input type="text" id="hanziFont" placeholder="Hanzi font">
+    <!-- <input type="number" id="hanziSize" value="48"> -->
+  
+    <input type="text" id="latinFont" placeholder="Latin font">
+    <!-- <input type="number" id="latinSize" value="24"> -->
+  </div>
+</div>
+
+<textarea id="pinyin" rows="1" cols="20" spellcheck="false"></textarea>
+<textarea id="gloss" rows="1" cols="20" spellcheck="false"></textarea>
+
 
 <div class="controls">
   <button id="nextBtn">Next</button>
@@ -30,6 +48,11 @@
   <button id="resetBtn">Reset</button>
   <button id="pinyinBtn">Toggle Pinyin</button>
   <button id="glossBtn">Toggle Gloss</button>
+  
+  <!-- Handles deck dropdown
+  <select id="deckSelect"></select> 
+  -->
+
 </div>
 
 <p>

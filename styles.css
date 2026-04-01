@@ -2,29 +2,67 @@ body {
     font-family: sans-serif;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: left;
     padding: 1rem;
     background: #FFE0E0;
   }
+
+textarea {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+  }
+
+.main-row {
+    display: flex;
+    align-items: center;
+    justify-content: left; /* keeps card centered overall */
+    gap: 1rem;
+    width: 100%;
+  }
   
-  .card {
-    font-size: 10vw;
+.card {
+    font-size: 30vw;
     max-font-size: 80px;
+    resize: both;
+    overflow: auto;
     background: white;
     padding: 1rem 2rem;
     border: 1px solid #ccc;
-    margin-bottom: 1rem;
+    align-items: left;
+    justify-content: left; /* keeps card centered overall */
+  }
+ 
+  .font-controls {
+    display: grid;
+    grid-template-rows: auto auto;
+    gap: 0.5rem;
+    grid-column: 3;
+  }
+
+.font-controls input[type="number"] {
+    width: 4ch;
   }
   
-  .controls {
+.controls {
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
-    justify-content: center;
+    justify-content: left;
     margin-top: 1rem;
   }
   
-  input, button, select {
+input, button, select {
     font-size: 1rem;
     padding: 0.5rem;
   }
+  
+/*
+.input-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0.5rem;
+    max-width: 500px;
+  }
+*/
+

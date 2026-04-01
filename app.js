@@ -107,6 +107,19 @@ function bindUI() {
 }
 
 
+// ===== Handles deck dropdown =====
+
+function loadCards(data) {
+  cards = data;
+  sets = {};
+
+  groupBySet();
+  populateSets();
+  initSet(currentSetName);
+  render();
+}
+
+
 // ===== STARTUP =====
 
 function start() {

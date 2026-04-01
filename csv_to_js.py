@@ -2,9 +2,9 @@ import csv
 import json
 from pathlib import Path
 
-csv_folderpath = 'cards_csv/'
-js_folderpath = 'cards_js/'
-manifest_fp = 'cards_js/manifest.js'
+csv_folderpath = 'decks_csv/'
+js_folderpath = 'decks_js/'
+manifest_fp = 'manifest.js'
 
 def csv_to_js(deck_name):
 
@@ -24,10 +24,10 @@ def csv_to_js(deck_name):
 
 def main():
 
-    csv_deck_names = [p.name for p in Path(csv_folderpath).iterdir() if p.is_file()] # .stem
-    js_deck_names = [p.name for p in Path(js_folderpath).iterdir() if p.is_file()] # .stem
-    new_deck_names = [deck for deck in js_deck_names 
-                        if deck not in csv_deck_names]
+    csv_deck_names = [p.stem for p in Path(csv_folderpath).iterdir() if p.is_file()] # .stem
+    js_deck_names = [p.stem for p in Path(js_folderpath).iterdir() if p.is_file()] # .stem
+    new_deck_names = [deck for deck in csv_deck_names 
+                        if deck not in js_deck_names]
 
     # Read/write
     if new_deck_names:
@@ -38,6 +38,8 @@ def main():
     js_deck_names.extend(new_deck_names)
     with open(manifest_fp, "w", encoding="utf-8") as f:
         f.write("const deckList = ")
-        json.dump(csv_deck_names, f, ensure_ascii=False, indent=2)
+        json.dump(js_deck_names, f, ensure_ascii=False, indent=2)
         f.write(";")
 
+if __name__ == '__main__':
+    main()
